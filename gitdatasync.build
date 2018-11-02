@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<project name="GitLab DataSync" default="zipup">
+	<target name="zipup" description="Zips up the whole application for deployment">
+		<echo message="Zipping up entire application" />
+		<zip zipfile="GitLabDataSync.zip" verbose="true" comment="GitLab Plug-In for SpiraTeam">
+			<fileset basedir="GitLab Data Sync/bin/Release">
+				<include name="GitLabDataSync.dll" />
+				<include name="Newtonsoft.Json.dll" />
+				<include name="CommonMark.dll" />
+			</fileset>
+			<fileset basedir="GitLabDataSync">
+				<include name="*.txt" />
+			</fileset>
+		</zip>
+	</target>	
+</project>
